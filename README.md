@@ -1,138 +1,100 @@
 <p align="center">
-  <img src="banner.svg" alt="Joel Salcedo Ojeda. UX Engineer y Product Designer que entrega en código" width="100%">
+  <img src="banner.svg" alt="Joel Salcedo Ojeda, UX Engineer. Diseño el producto y lo construyo: interfaz, datos y backend." width="100%">
 </p>
 
 <p align="center">
-  <a href="https://joelsalcedoojeda.framer.website"><img alt="Portafolio" src="https://img.shields.io/badge/Portafolio-joelsalcedoojeda.framer.website-0e4f55?style=for-the-badge&logo=framer&logoColor=white"></a>
-  <a href="https://www.linkedin.com/in/joel-salcedo-ojeda-a74044359"><img alt="LinkedIn" src="https://img.shields.io/badge/LinkedIn-Joel%20Salcedo-123653?style=for-the-badge"></a>
-  <a href="mailto:joelsalcedoojeda@gmail.com"><img alt="Email" src="https://img.shields.io/badge/Email-joelsalcedoojeda%40gmail.com-f4a340?style=for-the-badge&logo=gmail&logoColor=white"></a>
+  <a href="https://joelsalcedoojeda.framer.website"><b>Portafolio</b></a>
+  &nbsp;·&nbsp;
+  <a href="https://www.linkedin.com/in/joel-salcedo-ojeda-a74044359"><b>LinkedIn</b></a>
+  &nbsp;·&nbsp;
+  <a href="mailto:joelsalcedoojeda@gmail.com"><b>joelsalcedoojeda@gmail.com</b></a>
 </p>
 
-## Hola, soy Joel
+---
 
-Diseño producto y lo entrego en código. Llevo 7 años en esto, tres de ellos en fintech: pagos B2B en Estados Unidos y crédito con garantía hipotecaria en Perú.
+**UX Engineer.** Diseño producto digital y lo llevo a producción en código. Tres años en fintech, en pagos B2B para Estados Unidos y en crédito con garantía hipotecaria para Perú, liderando diseño, QA y desarrollo frontend.
 
-Publico mis propias apps iOS en Swift y SwiftUI, y construyo productos full stack sobre PostgreSQL con desarrollo dirigido por especificación (SDD) y agentes de IA. Trabajo en remoto desde Colombia.
+Por mi cuenta construyo productos completos: aplicaciones iOS en Swift y sistemas web sobre PostgreSQL, donde la seguridad y las reglas de negocio viven en la base de datos y no en la interfaz. Trabajo con Spec-Driven Development y agentes de IA.
 
-## Lo que estoy construyendo
+## Trabajo seleccionado
+
+### Mayapo POS
+
+Sistema de punto de venta multi-restaurante. Tres aplicaciones sobre una misma base de datos: mesero, cocina (KDS) y caja. &nbsp;[mayapo-pos.vercel.app](https://mayapo-pos.vercel.app/entrar)
+
+`Next.js` `TypeScript` `PostgreSQL` `Supabase` `Row Level Security` `TanStack Query` `Zod` `Tailwind`
 
 <table>
-  <tr>
-    <td width="50%" valign="top">
-      <h3>Mayapo POS</h3>
-      <p>Sistema de punto de venta multi-restaurante. Tres aplicaciones sobre la misma base: mesero, cocina (KDS) y caja.</p>
-      <ul>
-        <li>Next.js (App Router), TypeScript estricto, Tailwind, TanStack Query y Zod</li>
-        <li>Supabase: PostgreSQL, Auth, Realtime y Storage</li>
-        <li>Multi-tenant con Row Level Security en todas las tablas. Los permisos viven en la base, no en la interfaz</li>
-        <li>Claims en el token con un Auth Hook y operaciones sensibles en funciones <code>SECURITY DEFINER</code></li>
-        <li>42 migraciones y 43 bloques de pruebas SQL de aislamiento entre restaurantes y de cálculo</li>
-      </ul>
-      <p><a href="https://mayapo-pos.vercel.app/entrar">mayapo-pos.vercel.app</a> · repositorio privado</p>
-    </td>
-    <td width="50%" valign="top">
-      <h3>Tiro Bacano</h3>
-      <p>Juego arcade de baloncesto para iOS. Publicado en la App Store, con más de 98 usuarios.</p>
-      <ul>
-        <li>SwiftUI y SpriteKit en Swift 6, con concurrencia estricta</li>
-        <li>Compras con StoreKit 2, anuncios con AdMob, cuentas con Apple y Google</li>
-        <li>Backend propio en Supabase para cuentas y ranking. Ninguna regla vive en la app: las decide PostgreSQL</li>
-        <li>Edge Functions en TypeScript que verifican el dispositivo con App Attest y Play Integrity</li>
-        <li>Pruebas SQL del servidor que corren con el rol y el token de un jugador real</li>
-      </ul>
-      <p><a href="https://tirobacano.framer.ai">tirobacano.framer.ai</a> · repositorio privado</p>
-    </td>
-  </tr>
-  <tr>
-    <td width="50%" valign="top">
-      <h3>Rens</h3>
-      <p>Finanzas personales para iOS. Publicada en la App Store, 80 usuarios activos.</p>
-      <ul>
-        <li>SwiftUI con MVVM</li>
-        <li>Firebase Auth con Apple y Google</li>
-        <li>Firestore en tiempo real para dividir cuentas entre varias personas</li>
-        <li>Swift Charts y widgets</li>
-      </ul>
-      <p><a href="https://apps.apple.com/co/app/rens/id6757876753">App Store</a> · repositorio privado</p>
-    </td>
-    <td width="50%" valign="top">
-      <h3>Subtitula</h3>
-      <p>Extensión de Chrome que subtitula y traduce en tiempo real cualquier audio del navegador. Ocho idiomas.</p>
-      <ul>
-        <li>TypeScript y Manifest V3: service worker, documento offscreen y content scripts</li>
-        <li>Transcripción por WebSocket con Gladia, traducción con DeepL y resúmenes con OpenAI</li>
-        <li>Parte de un proyecto open source abandonado. Reparé el build y una condición de carrera en la mensajería de Chrome que perdía las traducciones</li>
-      </ul>
-      <p>repositorio privado</p>
-    </td>
-  </tr>
+  <tr><td width="140" valign="top"><b>Arquitectura</b></td><td>Multi-tenant desde el primer día. El token lleva restaurante, sede y rol mediante un Auth Hook, y cada política de Row Level Security lee esos claims.</td></tr>
+  <tr><td width="140" valign="top"><b>Seguridad</b></td><td>RLS forzado en todas las tablas, con denegación por defecto. Las operaciones sensibles (anular una orden, cerrar caja, cambiar un precio) pasan por funciones <code>SECURITY DEFINER</code>. Auditoría de solo inserción.</td></tr>
+  <tr><td width="140" valign="top"><b>Datos</b></td><td>42 migraciones versionadas. Dinero en pesos enteros con <code>numeric</code>, precios congelados al entrar a la orden y día operativo por sede.</td></tr>
+  <tr><td width="140" valign="top"><b>Calidad</b></td><td>43 bloques de pruebas SQL de aislamiento entre restaurantes y de cálculo, que corren sobre una base limpia.</td></tr>
 </table>
 
-## Cómo trabajo con IA
+### Tiro Bacano
 
-Uso Spec-Driven Development (SDD). La IA no recibe un prompt suelto: recibe una especificación, un plan técnico y una lista de tareas, y lo que escribe pasa por pruebas y revisión antes de entrar.
+Juego arcade de baloncesto para iOS. Publicado en la App Store, con más de 98 usuarios. &nbsp;[tirobacano.framer.ai](https://tirobacano.framer.ai)
+
+`Swift 6` `SwiftUI` `SpriteKit` `StoreKit 2` `PostgreSQL` `Supabase Edge Functions` `App Attest`
+
+<table>
+  <tr><td width="140" valign="top"><b>Cliente</b></td><td>SwiftUI con SpriteKit embebido, en Swift 6 con concurrencia estricta. Compras con StoreKit 2 y cuentas con Apple y Google.</td></tr>
+  <tr><td width="140" valign="top"><b>Servidor</b></td><td>Backend propio para cuentas y ranking, pensado para iPhone y Android. Ninguna regla vive en la app: qué partida cuenta y quién gana lo decide PostgreSQL.</td></tr>
+  <tr><td width="140" valign="top"><b>Integridad</b></td><td>Edge Functions en TypeScript que verifican el dispositivo con App Attest y Play Integrity antes de aceptar una partida.</td></tr>
+  <tr><td width="140" valign="top"><b>Calidad</b></td><td>Pruebas SQL del servidor que se ejecutan con el rol y el token de un jugador real.</td></tr>
+</table>
+
+### Rens
+
+Finanzas personales para iOS. Publicada en la App Store, con 80 usuarios activos. &nbsp;[App Store](https://apps.apple.com/co/app/rens/id6757876753)
+
+`Swift` `SwiftUI` `MVVM` `Firebase Auth` `Firestore` `Swift Charts` `WidgetKit`
+
+Registro de gastos e ingresos con almacenamiento local primero, presupuestos por categoría y metas de ahorro. Las cuentas compartidas se dividen entre varias personas en tiempo real sobre Firestore.
+
+### Subtitula
+
+Extensión de Chrome que subtitula y traduce en tiempo real cualquier audio del navegador, en ocho idiomas.
+
+`TypeScript` `Chrome Extensions MV3` `WebSockets` `Gladia` `DeepL` `OpenAI`
+
+Parte de un proyecto open source abandonado que ya no compilaba. Reparé el build y resolví una condición de carrera en la mensajería de Chrome: varios listeners respondían mensajes ajenos y la traducción se perdía en el camino de vuelta.
+
+## Cómo trabajo
+
+Spec-Driven Development. El agente de IA no recibe un prompt suelto: recibe una especificación, un plan técnico y una lista de tareas que viven en el repositorio junto al código. Lo que escribe pasa por pruebas y revisión antes de entrar.
 
 ```mermaid
 flowchart LR
-    A[Especificación<br/>qué y por qué] --> B[Plan técnico<br/>cómo]
-    B --> C[Tareas<br/>en orden]
-    C --> D[Claude Code<br/>implementa]
-    D --> E[Pruebas y<br/>revisión de código]
+    A[Especificación] --> B[Plan técnico]
+    B --> C[Tareas]
+    C --> D[Implementación<br/>con Claude Code]
+    D --> E{Pruebas y<br/>revisión}
     E -->|falla| D
     E -->|pasa| F[Producción]
 ```
 
-- **Especificación primero.** Cada proyecto guarda su `spec`, su plan técnico y sus tareas en el repositorio, junto al código.
-- **Las reglas en la base de datos.** Seguridad y lógica de negocio en PostgreSQL, con pruebas SQL que corren sobre base limpia.
-- **Prototipos antes de comprometer al equipo.** Claude, v0 y un agente propio que corre sobre Gemma 4.
-
 ## Stack
 
-**Producto y diseño**
-
-![Figma](https://img.shields.io/badge/Figma-1e1e1e?style=flat-square&logo=figma&logoColor=white)
-![Framer](https://img.shields.io/badge/Framer-0055ff?style=flat-square&logo=framer&logoColor=white)
-![Webflow](https://img.shields.io/badge/Webflow-146ef5?style=flat-square&logo=webflow&logoColor=white)
-![Design systems](https://img.shields.io/badge/Design%20systems-123653?style=flat-square)
-
-**Frontend**
-
-![TypeScript](https://img.shields.io/badge/TypeScript-3178c6?style=flat-square&logo=typescript&logoColor=white)
-![Next.js](https://img.shields.io/badge/Next.js-000000?style=flat-square&logo=nextdotjs&logoColor=white)
-![React](https://img.shields.io/badge/React-20232a?style=flat-square&logo=react&logoColor=61dafb)
-![Angular](https://img.shields.io/badge/Angular-dd0031?style=flat-square&logo=angular&logoColor=white)
-![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-0f172a?style=flat-square&logo=tailwindcss&logoColor=38bdf8)
-
-**Backend y datos**
-
-![PostgreSQL](https://img.shields.io/badge/PostgreSQL-336791?style=flat-square&logo=postgresql&logoColor=white)
-![Supabase](https://img.shields.io/badge/Supabase-1c1c1c?style=flat-square&logo=supabase&logoColor=3ecf8e)
-![Firebase](https://img.shields.io/badge/Firebase-1f1f1f?style=flat-square&logo=firebase&logoColor=ffca28)
-![GraphQL](https://img.shields.io/badge/GraphQL-e10098?style=flat-square&logo=graphql&logoColor=white)
-![Node.js](https://img.shields.io/badge/Node.js-1f2937?style=flat-square&logo=nodedotjs&logoColor=5fa04e)
-
-**iOS**
-
-![Swift](https://img.shields.io/badge/Swift-f05138?style=flat-square&logo=swift&logoColor=white)
-![SwiftUI](https://img.shields.io/badge/SwiftUI-0a84ff?style=flat-square&logo=swift&logoColor=white)
-![SpriteKit](https://img.shields.io/badge/SpriteKit-1f2937?style=flat-square&logo=apple&logoColor=white)
-![StoreKit 2](https://img.shields.io/badge/StoreKit%202-1f2937?style=flat-square&logo=apple&logoColor=white)
-
-**IA**
-
-![Claude Code](https://img.shields.io/badge/Claude%20Code-d97757?style=flat-square&logo=claude&logoColor=white)
-![v0](https://img.shields.io/badge/v0-000000?style=flat-square&logo=vercel&logoColor=white)
-![SDD](https://img.shields.io/badge/Spec--Driven%20Development-0e4f55?style=flat-square)
+| Área | Tecnologías |
+|---|---|
+| **Frontend** | TypeScript · Next.js · React · Angular · Tailwind · TanStack Query |
+| **Backend y datos** | PostgreSQL (RLS, funciones, triggers, migraciones) · Supabase (Auth, Realtime, Storage, Edge Functions) · Firebase · Node.js · GraphQL |
+| **iOS** | Swift · SwiftUI · SpriteKit · StoreKit 2 · WidgetKit |
+| **Low-code** | OutSystems, sobre la plataforma .NET (UI Patterns y themes) |
+| **Diseño de producto** | Figma · Design systems · Investigación con usuarios · Pruebas de usabilidad |
+| **IA aplicada** | Spec-Driven Development · Claude Code · v0 · Integración de modelos de IA en producto |
 
 ## Experiencia
 
-| Dónde | Rol | Qué hice |
+| Periodo | Rol | Resultado |
 |---|---|---|
-| **Fintech de crédito con garantía hipotecaria** · Lima, remoto · 06/2024 – hoy | Product Designer · Design Expert – AI & Product Design | CRM que usan 60 asesores, con un modelo de IA integrado. El tiempo entre solicitud y desembolso bajó de 30 días a 10. Respondo por el frontend y lidero QA y dos desarrolladores. |
-| **CashCloud** · Miami, remoto · 10/2023 – 08/2026 | Senior Product Designer / Design Lead | Plataforma de pagos B2B que mueve más de USD 100 millones al mes. Verificación bancaria y devoluciones ACH, cambio de método de pago, integraciones con ERP. Código en Angular. |
+| 06/2024 – hoy | **Product Designer · Design Expert, AI & Product Design**<br/>Fintech de crédito con garantía hipotecaria · Lima, remoto | CRM que usan 60 asesores, con un modelo de IA integrado. El tiempo entre solicitud y desembolso de un crédito bajó de 30 días a 10. Respondo por el frontend y lidero QA y dos desarrolladores. |
+| 10/2023 – 08/2026 | **Senior Product Designer / Design Lead**<br/>CashCloud · Miami, remoto | Plataforma de pagos B2B que mueve más de USD 100 millones al mes. Verificación bancaria y devoluciones ACH, cambio de método de pago e integraciones con ERP. Código en Angular bajo cumplimiento SOC 2. |
 
-## Contacto
+---
 
-Español nativo · Inglés B2
-
-[joelsalcedoojeda@gmail.com](mailto:joelsalcedoojeda@gmail.com) · [LinkedIn](https://www.linkedin.com/in/joel-salcedo-ojeda-a74044359) · [Portafolio](https://joelsalcedoojeda.framer.website)
+<p align="center">
+  Remoto desde Colombia · Español nativo · Inglés B2<br/>
+  <a href="mailto:joelsalcedoojeda@gmail.com">joelsalcedoojeda@gmail.com</a>
+</p>

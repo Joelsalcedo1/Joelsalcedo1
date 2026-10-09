@@ -1,45 +1,31 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 320" width="1200" height="320" role="img" aria-label="Joel Salcedo Ojeda, UX Engineer y Product Designer que entrega en código">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 300" width="1200" height="300" role="img" aria-label="Joel Salcedo Ojeda, UX Engineer">
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#0b1a2b"/>
-      <stop offset="0.55" stop-color="#123653"/>
-      <stop offset="1" stop-color="#0e4f55"/>
+      <stop offset="0" stop-color="#0b1220"/>
+      <stop offset="1" stop-color="#101d33"/>
     </linearGradient>
-    <radialGradient id="glow" cx="0.86" cy="0.12" r="0.55">
-      <stop offset="0" stop-color="#f4a340" stop-opacity="0.34"/>
-      <stop offset="1" stop-color="#f4a340" stop-opacity="0"/>
-    </radialGradient>
-    <pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse">
-      <path d="M32 0H0V32" fill="none" stroke="#ffffff" stroke-opacity="0.045" stroke-width="1"/>
-    </pattern>
+    <linearGradient id="line" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#e8a23d"/>
+      <stop offset="1" stop-color="#e8a23d" stop-opacity="0"/>
+    </linearGradient>
   </defs>
-  <rect width="1200" height="320" rx="22" fill="url(#bg)"/>
-  <rect width="1200" height="320" rx="22" fill="url(#grid)"/>
-  <rect width="1200" height="320" rx="22" fill="url(#glow)"/>
+  <rect width="1200" height="300" rx="16" fill="url(#bg)"/>
+  <rect x="0.5" y="0.5" width="1199" height="299" rx="16" fill="none" stroke="#ffffff" stroke-opacity="0.08"/>
 
   <g font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif">
-    <text x="72" y="92" fill="#f4a340" font-size="19" font-weight="700" letter-spacing="3.5">UX ENGINEER · PRODUCT DESIGNER</text>
-    <text x="70" y="160" fill="#ffffff" font-size="62" font-weight="800" letter-spacing="-1.2">Joel Salcedo Ojeda</text>
-    <text x="72" y="204" fill="#cfe0ee" font-size="25" font-weight="400">Diseño el producto y lo entrego en código.</text>
+    <text x="72" y="98" fill="#e8a23d" font-size="18" font-weight="600" letter-spacing="5">UX ENGINEER</text>
+    <text x="70" y="164" fill="#ffffff" font-size="60" font-weight="700" letter-spacing="-1.4">Joel Salcedo Ojeda</text>
+    <rect x="72" y="188" width="300" height="2" fill="url(#line)"/>
+    <text x="72" y="228" fill="#aebbd0" font-size="22" font-weight="400">Diseño el producto y lo construyo: interfaz, datos y backend.</text>
 
-    <g font-size="16" font-weight="600" fill="#eaf2f8">
-      <rect x="72" y="238" width="104" height="36" rx="18" fill="#ffffff" fill-opacity="0.10" stroke="#ffffff" stroke-opacity="0.22"/>
-      <text x="124" y="262" text-anchor="middle">Fintech</text>
-      <rect x="188" y="238" width="142" height="36" rx="18" fill="#ffffff" fill-opacity="0.10" stroke="#ffffff" stroke-opacity="0.22"/>
-      <text x="259" y="262" text-anchor="middle">iOS · SwiftUI</text>
-      <rect x="342" y="238" width="238" height="36" rx="18" fill="#ffffff" fill-opacity="0.10" stroke="#ffffff" stroke-opacity="0.22"/>
-      <text x="461" y="262" text-anchor="middle">Next.js · PostgreSQL · RLS</text>
-      <rect x="592" y="238" width="218" height="36" rx="18" fill="#f4a340" fill-opacity="0.16" stroke="#f4a340" stroke-opacity="0.55"/>
-      <text x="701" y="262" text-anchor="middle" fill="#ffd9a3">SDD con agentes de IA</text>
+    <g text-anchor="end">
+      <text x="1128" y="104" fill="#ffffff" font-size="34" font-weight="700" letter-spacing="-0.5">7 años</text>
+      <text x="1128" y="128" fill="#8494ad" font-size="15">de producto digital</text>
+      <text x="1128" y="176" fill="#ffffff" font-size="34" font-weight="700" letter-spacing="-0.5">3 en fintech</text>
+      <text x="1128" y="200" fill="#8494ad" font-size="15">pagos B2B y crédito</text>
+      <text x="1128" y="248" fill="#ffffff" font-size="34" font-weight="700" letter-spacing="-0.5">2 apps iOS</text>
+      <text x="1128" y="272" fill="#8494ad" font-size="15">publicadas en la App Store</text>
     </g>
-  </g>
-
-  <g fill="none" stroke="#ffffff" stroke-opacity="0.5" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" transform="translate(968 92)">
-    <rect x="0" y="0" width="168" height="124" rx="14" stroke-opacity="0.35"/>
-    <path d="M0 30H168" stroke-opacity="0.35"/>
-    <circle cx="18" cy="15" r="3.5" fill="#f4a340" stroke="none"/>
-    <circle cx="33" cy="15" r="3.5" fill="#ffffff" fill-opacity="0.45" stroke="none"/>
-    <circle cx="48" cy="15" r="3.5" fill="#ffffff" fill-opacity="0.45" stroke="none"/>
-    <path d="M40 62l-16 15 16 15M128 62l16 15-16 15M94 54l-20 46" stroke="#f4a340" stroke-opacity="0.95"/>
+    <rect x="884" y="60" width="1" height="216" fill="#ffffff" fill-opacity="0.10"/>
   </g>
 </svg>
