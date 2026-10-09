@@ -89,8 +89,17 @@ flowchart LR
 
 | Periodo | Rol | Resultado |
 |---|---|---|
-| 06/2024 – hoy | **Product Designer · Design Expert, AI & Product Design**<br/>Fintech de crédito con garantía hipotecaria · Lima, remoto | CRM que usan 60 asesores, con un modelo de IA integrado. El tiempo entre solicitud y desembolso de un crédito bajó de 30 días a 10. Respondo por el frontend y lidero QA y dos desarrolladores. |
-| 10/2023 – 08/2026 | **Senior Product Designer / Design Lead**<br/>CashCloud · Miami, remoto | Plataforma de pagos B2B que mueve más de USD 100 millones al mes. Verificación bancaria y devoluciones ACH, cambio de método de pago e integraciones con ERP. Código en Angular bajo cumplimiento SOC 2. |
+| 06/2024 – hoy | **Product Designer · Design Expert, AI & Product Design**<br/>Fintech de crédito con garantía hipotecaria · Lima, remoto | Entré como UX Designer y pasé al cargo actual en 01/2026. Diseñé y entregué el CRM que usan 60 asesores de ventas, riesgos y cobranza, con un modelo de IA integrado. El tiempo entre solicitud y desembolso de un crédito bajó de 30 días a 10. Respondo por el frontend, reviso el contrato GraphQL con backend y lidero QA y dos desarrolladores. Otra compañía compró el proyecto para operarlo en México. |
+| 10/2023 – 08/2026 | **Senior Product Designer / Design Lead**<br/>CashCloud · Miami, remoto | Entré como UI Designer a diseñar una versión mobile y quince meses después dirigía todo el diseño del producto. Plataforma de pagos B2B que usan cientos de empresas y mueve más de USD 100 millones al mes. Verificación bancaria y devoluciones ACH, cambio de método de pago sobre transacciones emitidas, despacho físico de cheques e integraciones con ERP. Cerca de 100 entrevistas con clientes. Código en Angular bajo cumplimiento SOC 2. |
+| 02/2023 – 10/2023 | **Diseñador UI/UX**<br/>Inlaze · Bogotá | CRM de afiliados desde la idea hasta la primera versión en producción, un producto que la compañía no tenía. Con él los afiliados pasaron a gestionar y cobrar sus comisiones. Design system construido desde cero. |
+| 01/2022 – 12/2022 | **Diseñador UX/UI Freelance**<br/>Montería | 10 proyectos digitales de punta a punta para clientes de ecommerce y otros sectores, con entrega documentada a desarrollo y acompañamiento durante la implementación. |
+| 06/2019 – 12/2021 | **Desarrollador Web y Diseñador UX**<br/>Vitola SAS · Colombia | Ecommerce a medida diseñado y desarrollado desde cero, que llevó el catálogo de 17 puntos de venta físicos a un solo canal digital. Único responsable del diseño UX/UI y del desarrollo frontend. |
+
+## Formación
+
+- **Licenciatura en Informática y Medios Audiovisuales** · Universidad de Córdoba · 2017 – 2022
+- **The Complete Full-Stack Web Development Bootcamp** (61,5 h) · Udemy · 2025
+- **UX/UI Design, UX Research, UX Writing, Product Design** · LinkedIn Learning · 2023
 
 ---
 
