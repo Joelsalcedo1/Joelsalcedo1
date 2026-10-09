@@ -20,7 +20,8 @@ Desarrollo con Spec-Driven Development (SDD). La especificación se escribe prim
 - 🏦 **3 años en fintech**: una plataforma de pagos que mueve más de USD 100 millones al mes y un CRM de crédito que usan 60 asesores
 - 🔧 **Backend en producción**: APIs en ASP.NET Core, resolvers GraphQL con Hot Chocolate, webhooks de pagos ACH y conectores OAuth 2.0 con ERP
 - 📱 **2 apps iOS propias** publicadas en la App Store
-- 🧠 **IA en producto y en el proceso**: un modelo integrado al CRM y desarrollo dirigido por especificación con Claude Code
+- 🧠 **IA en producto y en el proceso**: un modelo integrado al CRM y desarrollo dirigido por especificación con Claude Code, Codex y GitHub Copilot
+- 🤖 **Orquestación multiagente**: múltiples agentes coordinados, con MCP y skills
 - 🌎 Remoto desde Colombia · Español nativo · Inglés B2
 
 ## 🚀 Lo que construyo
@@ -137,7 +138,15 @@ flowchart TB
 | `CLAUDE.md` | Con qué reglas | Stack, comandos, arquitectura y reglas no negociables que el agente lee antes de escribir código |
 | `DECISIONES.md` | Por qué quedó así | Registro de decisiones técnicas, cada una con su razón. 34 en Mayapo POS |
 
-**Agentes y modelos.** Claude Code para implementar sobre el repositorio y generar el código base (scaffolding). Para prototipar uso Claude, v0 y un agente propio entrenado que corre sobre Gemma 4.
+**Agentes y orquestación**
+
+| Pieza | Para qué |
+|---|---|
+| **Claude Code, Codex y GitHub Copilot** | Agentes de código para implementar sobre el repositorio y generar el código base (scaffolding) |
+| **Orquestación multiagente** | Coordino múltiples agentes en un mismo flujo de trabajo |
+| **MCP (Model Context Protocol)** | Conecta a los agentes con herramientas y datos |
+| **Skills** | Empaquetan los procedimientos que se repiten |
+| **Claude, v0 y un agente propio sobre Gemma 4** | Prototipado. El agente propio lo entrené yo |
 
 **Puertas de calidad.** Una tarea no está hecha hasta que pasa la suya.
 
@@ -216,6 +225,11 @@ flowchart TB
 
 <p>
   <img alt="Claude Code" src="https://img.shields.io/badge/Claude%20Code-d97757?style=flat-square&logo=claude&logoColor=white">
+  <img alt="Codex" src="https://img.shields.io/badge/Codex-111827?style=flat-square&logo=openai&logoColor=white">
+  <img alt="GitHub Copilot" src="https://img.shields.io/badge/GitHub%20Copilot-181717?style=flat-square&logo=githubcopilot&logoColor=white">
+  <img alt="Orquestación multiagente" src="https://img.shields.io/badge/Orquestaci%C3%B3n%20multiagente-be185d?style=flat-square">
+  <img alt="MCP (Model Context Protocol)" src="https://img.shields.io/badge/MCP%20(Model%20Context%20Protocol)-0f766e?style=flat-square&logo=modelcontextprotocol&logoColor=white">
+  <img alt="Skills" src="https://img.shields.io/badge/Skills-d97757?style=flat-square">
   <img alt="Spec-Driven Development" src="https://img.shields.io/badge/Spec--Driven%20Development-7c3aed?style=flat-square">
   <img alt="v0" src="https://img.shields.io/badge/v0-000000?style=flat-square&logo=vercel&logoColor=white">
   <img alt="Gemma" src="https://img.shields.io/badge/Gemma-4285f4?style=flat-square&logo=google&logoColor=white">
