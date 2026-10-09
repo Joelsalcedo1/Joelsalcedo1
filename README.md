@@ -4,7 +4,6 @@
 
 <p align="center">
   <a href="https://joelsalcedoojeda.framer.website"><img alt="Portafolio" src="https://img.shields.io/badge/Portafolio-7c3aed?style=for-the-badge&logo=framer&logoColor=white"></a>
-  <a href="https://www.linkedin.com/in/joel-salcedo-ojeda-a74044359"><img alt="LinkedIn" src="https://img.shields.io/badge/LinkedIn-0a66c2?style=for-the-badge"></a>
   <a href="mailto:joelsalcedoojeda@gmail.com"><img alt="Email" src="https://img.shields.io/badge/Email-ff4d8d?style=for-the-badge&logo=gmail&logoColor=white"></a>
   <a href="https://apps.apple.com/co/app/rens/id6757876753"><img alt="Rens en la App Store" src="https://img.shields.io/badge/Rens%20en%20la%20App%20Store-0a84ff?style=for-the-badge&logo=appstore&logoColor=white"></a>
   <a href="https://tirobacano.framer.ai"><img alt="Tiro Bacano" src="https://img.shields.io/badge/Tiro%20Bacano-ea580c?style=for-the-badge"></a>
@@ -12,11 +11,14 @@
 
 ## 👋 Sobre mí
 
-Soy **UX Engineer**: diseño producto digital y lo llevo a producción en código. Tres años en fintech, en pagos B2B para Estados Unidos y en crédito con garantía hipotecaria para Perú, liderando diseño, QA y desarrollo frontend.
+Soy **UX Engineer** con 7 años de experiencia, tres en fintech. Backend en C# y ASP.NET Core con Entity Framework Core sobre PostgreSQL y SQL Server, APIs GraphQL y REST, frontend en Angular y React, y aplicaciones iOS propias en Swift y SwiftUI publicadas en la App Store.
 
-Por mi cuenta construyo productos completos: aplicaciones iOS en Swift y sistemas web sobre PostgreSQL, donde la seguridad y las reglas de negocio viven en la base de datos y no en la interfaz. Trabajo con Spec-Driven Development y agentes de IA.
+Integré al CRM de una fintech peruana de crédito un modelo de IA con el que el asesor que antes necesitaba meses de entrenamiento hoy usa el software desde su primer día.
+
+Desarrollo con Spec-Driven Development (SDD). La especificación se escribe primero y el agente de IA implementa contra ella.
 
 - 🏦 **3 años en fintech**: una plataforma de pagos que mueve más de USD 100 millones al mes y un CRM de crédito que usan 60 asesores
+- 🔧 **Backend en producción**: APIs en ASP.NET Core, resolvers GraphQL con Hot Chocolate, webhooks de pagos ACH y conectores OAuth 2.0 con ERP
 - 📱 **2 apps iOS propias** publicadas en la App Store
 - 🧠 **IA en producto y en el proceso**: un modelo integrado al CRM y desarrollo dirigido por especificación con Claude Code
 - 🌎 Remoto desde Colombia · Español nativo · Inglés B2
@@ -74,7 +76,33 @@ Parte de un proyecto open source abandonado que ya no compilaba. Reparé el buil
 
 ## ⚙️ Cómo trabajo
 
-**Ingeniería dirigida por especificación (SDD).** El agente de IA nunca recibe un prompt suelto. Recibe documentos versionados en el repositorio, implementa una tarea a la vez y no avanza hasta pasar las puertas de calidad.
+### Spec-Driven Development (SDD)
+
+**La especificación se escribe primero y el agente de IA implementa contra ella.** El agente nunca recibe un prompt suelto. Recibe documentos versionados en el repositorio, implementa una tarea a la vez y no avanza hasta pasar las puertas de calidad.
+
+<p align="center">
+  <img src="assets/sdd.svg" alt="Spec-Driven Development en seis pasos. Yo defino la especificación, el plan técnico y las tareas. El agente implementa una tarea a la vez. Se verifica con puertas de calidad y pull request antes de producción." width="100%">
+</p>
+
+**Qué resuelve**
+
+- **Decido yo, implementa el agente.** El alcance, el modelo de datos y las reglas de seguridad quedan escritos antes de que exista una línea de código.
+- **El contexto vive en el repositorio, no en un chat.** Los documentos están versionados junto al código, y cada sesión retoma desde la sección «Dónde quedamos».
+- **El código generado pasa las mismas puertas que cualquier otro.** Tipos, pruebas, seguridad y revisión de código antes de llegar a producción.
+
+**El ciclo, paso a paso**
+
+| # | Paso | Qué pasa | Qué queda |
+|---|---|---|---|
+| 1 | **Especificación** | Escribo qué se construye y por qué: contexto y objetivo, alcance, funcionalidades, restricciones, riesgos asumidos y puntos abiertos | `spec.md` |
+| 2 | **Plan técnico** | Bajo la especificación a decisiones: modelo de datos, contrato de funciones, cómo se cumple cada regla de seguridad y plan de pruebas | `plantecnico.md` |
+| 3 | **Tareas** | Parto el plan en tareas numeradas y pequeñas, agrupadas por paso | `task.md` |
+| 4 | **Implementación** | Claude Code toma una sola tarea y la implementa contra esos documentos, con las reglas de `CLAUDE.md` | Código y pruebas de esa tarea |
+| 5 | **Puertas de calidad** | Compilación, tipos, lint, pruebas y seguridad. Si algo falla, la tarea vuelve al agente | Todo en verde |
+| 6 | **Entrega** | Commit pequeño en una rama de Git y pull request con revisión de código. QA funcional y de regresión antes de producción | Tarea cerrada en `task.md` |
+
+<details>
+<summary><b>Ver el flujo completo, con los documentos que lee el agente</b></summary>
 
 ```mermaid
 flowchart TB
@@ -90,12 +118,14 @@ flowchart TB
     end
     CTX --> A
     DOC --> A["Claude Code<br/>implementa una tarea"]
-    A --> GPuertas de<br/>calidad
+    A --> G{"Puertas de<br/>calidad"}
     G -->|falla| A
     G -->|pasa| M["Commit pequeño<br/>y tarea cerrada"]
     M -->|siguiente tarea| A
-    M --> R["Producción"]
+    M --> R["Pull request, QA<br/>y producción"]
 ```
+
+</details>
 
 **Los artefactos**
 
@@ -107,14 +137,19 @@ flowchart TB
 | `CLAUDE.md` | Con qué reglas | Stack, comandos, arquitectura y reglas no negociables que el agente lee antes de escribir código |
 | `DECISIONES.md` | Por qué quedó así | Registro de decisiones técnicas, cada una con su razón. 34 en Mayapo POS |
 
+**Agentes y modelos.** Claude Code para implementar sobre el repositorio y generar el código base (scaffolding). Para prototipar uso Claude, v0 y un agente propio entrenado que corre sobre Gemma 4.
+
 **Puertas de calidad.** Una tarea no está hecha hasta que pasa la suya.
 
 | Capa | Condición |
 |---|---|
 | Web | `tsc --noEmit` en modo estricto y ESLint sin errores. Los tipos de la base se regeneran desde el esquema después de cada migración |
 | iOS | Debug y Release compilan, sin warnings nuevos y con las pruebas unitarias en verde |
+| .NET | Pruebas unitarias en xUnit generadas desde la misma especificación, con integración continua en GitLab CI |
 | Base de datos | Pruebas SQL en verde sobre una base recreada desde cero: aislamiento entre tenants, permisos por rol y cálculo |
 | Seguridad | Asesor de seguridad de Supabase sin avisos WARN ni ERROR. Una prueba de catálogo verifica que el rol `authenticated` solo ejecuta las funciones de su lista |
+
+**Control de cambios.** Cada cambio entra por una rama en Git y un pull request con revisión de código, y pasa QA funcional y de regresión antes de producción.
 
 **Principios de arquitectura**
 
@@ -137,11 +172,24 @@ flowchart TB
   <img alt="Tailwind CSS" src="https://img.shields.io/badge/Tailwind%20CSS-0ea5e9?style=flat-square&logo=tailwindcss&logoColor=white">
   <img alt="TanStack Query" src="https://img.shields.io/badge/TanStack%20Query-ff4154?style=flat-square&logo=reactquery&logoColor=white">
   <img alt="Zod" src="https://img.shields.io/badge/Zod-3068b7?style=flat-square&logo=zod&logoColor=white">
+  <img alt="JavaScript" src="https://img.shields.io/badge/JavaScript-f7df1e?style=flat-square&logo=javascript&logoColor=black">
+  <img alt="HTML" src="https://img.shields.io/badge/HTML-e34f26?style=flat-square&logo=html5&logoColor=white">
+  <img alt="CSS" src="https://img.shields.io/badge/CSS-663399?style=flat-square&logo=css&logoColor=white">
 </p>
 
 **Backend y datos**
 
 <p>
+  <img alt="C#" src="https://img.shields.io/badge/C%23-512bd4?style=flat-square&logo=dotnet&logoColor=white">
+  <img alt=".NET 8" src="https://img.shields.io/badge/.NET%208-512bd4?style=flat-square&logo=dotnet&logoColor=white">
+  <img alt="ASP.NET Core Web API" src="https://img.shields.io/badge/ASP.NET%20Core%20Web%20API-512bd4?style=flat-square&logo=dotnet&logoColor=white">
+  <img alt="Entity Framework Core" src="https://img.shields.io/badge/Entity%20Framework%20Core-512bd4?style=flat-square&logo=dotnet&logoColor=white">
+  <img alt="Hot Chocolate" src="https://img.shields.io/badge/Hot%20Chocolate-3b2a6b?style=flat-square&logo=graphql&logoColor=white">
+  <img alt="SQL Server" src="https://img.shields.io/badge/SQL%20Server-a91d22?style=flat-square">
+  <img alt="xUnit" src="https://img.shields.io/badge/xUnit-2b2b2b?style=flat-square">
+  <img alt="JWT" src="https://img.shields.io/badge/JWT-111827?style=flat-square&logo=jsonwebtokens&logoColor=white">
+  <img alt="OAuth 2.0" src="https://img.shields.io/badge/OAuth%202.0-111827?style=flat-square">
+  <img alt="APIs REST" src="https://img.shields.io/badge/APIs%20REST-0f766e?style=flat-square">
   <img alt="PostgreSQL" src="https://img.shields.io/badge/PostgreSQL-336791?style=flat-square&logo=postgresql&logoColor=white">
   <img alt="Supabase" src="https://img.shields.io/badge/Supabase-1c1c1c?style=flat-square&logo=supabase&logoColor=3ecf8e">
   <img alt="Row Level Security" src="https://img.shields.io/badge/Row%20Level%20Security-0f766e?style=flat-square">
@@ -150,6 +198,7 @@ flowchart TB
   <img alt="Drizzle ORM" src="https://img.shields.io/badge/Drizzle%20ORM-1a1a1a?style=flat-square&logo=drizzle&logoColor=c5f74f">
   <img alt="GraphQL" src="https://img.shields.io/badge/GraphQL-e10098?style=flat-square&logo=graphql&logoColor=white">
   <img alt="Node.js" src="https://img.shields.io/badge/Node.js-3c873a?style=flat-square&logo=nodedotjs&logoColor=white">
+  <img alt="Integraciones con ERP" src="https://img.shields.io/badge/Integraciones%20con%20ERP-334155?style=flat-square">
 </p>
 
 **iOS**
@@ -181,15 +230,67 @@ flowchart TB
   <img alt="Webflow" src="https://img.shields.io/badge/Webflow-146ef5?style=flat-square&logo=webflow&logoColor=white">
 </p>
 
+**Entrega y dominio**
+
+<p>
+  <img alt="Git flow por ramas" src="https://img.shields.io/badge/Git%20flow%20por%20ramas-f05032?style=flat-square&logo=git&logoColor=white">
+  <img alt="GitHub" src="https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white">
+  <img alt="GitLab" src="https://img.shields.io/badge/GitLab-fc6d26?style=flat-square&logo=gitlab&logoColor=white">
+  <img alt="GitLab CI" src="https://img.shields.io/badge/GitLab%20CI-fc6d26?style=flat-square&logo=gitlab&logoColor=white">
+  <img alt="Code review y pull requests" src="https://img.shields.io/badge/Code%20review%20y%20pull%20requests-334155?style=flat-square">
+  <img alt="QA funcional y de regresión" src="https://img.shields.io/badge/QA%20funcional%20y%20de%20regresi%C3%B3n-334155?style=flat-square">
+  <img alt="Scrum" src="https://img.shields.io/badge/Scrum-334155?style=flat-square">
+  <img alt="Pagos ACH" src="https://img.shields.io/badge/Pagos%20ACH-0f766e?style=flat-square">
+  <img alt="KYB/KYC" src="https://img.shields.io/badge/KYB%2FKYC-0f766e?style=flat-square">
+  <img alt="SOC 2" src="https://img.shields.io/badge/SOC%202-0f766e?style=flat-square">
+</p>
+
 ## 💼 Experiencia
 
-| Periodo | Rol | Resultado |
-|---|---|---|
-| 06/2024 – hoy | **Product Designer · Design Expert, AI & Product Design**<br/>Fintech de crédito con garantía hipotecaria · Lima, remoto | Entré como UX Designer y pasé al cargo actual en 01/2026. Diseñé y entregué el CRM que usan 60 asesores de ventas, riesgos y cobranza, con un modelo de IA integrado. El tiempo entre solicitud y desembolso de un crédito bajó de 30 días a 10. Respondo por el frontend, reviso el contrato GraphQL con backend y lidero QA y dos desarrolladores. Otra compañía compró el proyecto para operarlo en México. |
-| 10/2023 – 08/2026 | **Senior Product Designer / Design Lead**<br/>CashCloud · Miami, remoto | Entré como UI Designer a diseñar una versión mobile y quince meses después dirigía todo el diseño del producto. Plataforma de pagos B2B que usan cientos de empresas y mueve más de USD 100 millones al mes. Verificación bancaria y devoluciones ACH, cambio de método de pago sobre transacciones emitidas, despacho físico de cheques e integraciones con ERP. Cerca de 100 entrevistas con clientes. Código en Angular bajo cumplimiento SOC 2. |
-| 02/2023 – 10/2023 | **Diseñador UI/UX**<br/>Inlaze · Bogotá | CRM de afiliados desde la idea hasta la primera versión en producción, un producto que la compañía no tenía. Con él los afiliados pasaron a gestionar y cobrar sus comisiones. Design system construido desde cero. |
-| 01/2022 – 12/2022 | **Diseñador UX/UI Freelance**<br/>Montería | 10 proyectos digitales de punta a punta para clientes de ecommerce y otros sectores, con entrega documentada a desarrollo y acompañamiento durante la implementación. |
-| 06/2019 – 12/2021 | **Desarrollador Web y Diseñador UX**<br/>Vitola SAS · Colombia | Ecommerce a medida diseñado y desarrollado desde cero, que llevó el catálogo de 17 puntos de venta físicos a un solo canal digital. Único responsable del diseño UX/UI y del desarrollo frontend. |
+### Full Stack Developer
+
+**Fintech de crédito con garantía hipotecaria** · Lima, Perú (remoto) · 06/2024 – Actualidad · Tiempo completo
+
+- Integré al CRM un modelo de IA que procesa la información y ordena el trabajo del asesor (Pegasus IA). Lo que antes exigía meses de entrenamiento hoy se usa desde el primer día. Lo expuse como servicio interno detrás de una API en ASP.NET Core, con procesamiento asíncrono de los documentos del crédito.
+- Desarrollé los resolvers GraphQL del CRM en C# con Hot Chocolate y Entity Framework Core sobre PostgreSQL, para los módulos de solicitud, riesgos y cobranza. Reviso el modelo de datos con el equipo de backend antes de construir, sobre queries y mutaciones.
+- Respondo por el frontend del producto. El CRM lo usan hoy 60 asesores de ventas, riesgos y cobranza, y otra compañía lo compró para operarlo con su propia fuerza de asesores en México.
+- Trabajé también en OutSystems, plataforma low-code sobre .NET, con UI Patterns y themes, y extensiones en C# para integrar servicios externos.
+- Lidero un equipo de QA y dos desarrolladores. Reviso cada ticket antes de que entre a desarrollo. Pruebas unitarias con xUnit e integración continua en GitLab CI.
+- Acompaño la integración con backend hasta producción. El tiempo entre la solicitud del crédito y el desembolso bajó de 30 días a 10.
+
+### Frontend AI Developer
+
+**CashCloud, fintech de pagos B2B** · Miami, Estados Unidos (remoto) · 10/2023 – 08/2026 · Contractor
+
+- Trabajé sobre el código en Angular, con maquetación y validaciones a partir de los prototipos, en una plataforma que usan cientos de empresas en Estados Unidos y Canadá y que mueve más de USD 100 millones al mes en transacciones de pago.
+- Construí el servicio de procesamiento ACH inteligente (**ACH+**). Verifica las cuentas bancarias antes de emitir el pago, monitorea cada transacción en tiempo real y automatiza devoluciones, correcciones y conciliación. Implementé en ASP.NET Core los endpoints REST de verificación de cuenta y los webhooks que reciben las devoluciones ACH.
+- Construí la función que cambia el método de pago de una transacción ya emitida, de cheque a ACH o cheque digital, sin rehacerla (**PayShift**), con una máquina de estados de la transacción persistida en SQL Server.
+- Construí el flujo de conexión con los sistemas contables y ERP del cliente (QuickBooks, NetSuite, Xero, SAP, Dynamics 365, Sage Intacct). Conectores con OAuth 2.0 y sincronización programada de facturas y proveedores.
+- Superadministrador interno para el seguimiento de todas las transacciones, con ledger y subledger, paginación y filtros resueltos en el servidor.
+- Usé Claude Code bajo SDD para generar componentes Angular y sus pruebas a partir de la especificación.
+- Bajo cumplimiento SOC 2, con autenticación multifactor y roles y permisos por capas, implementados con JWT y políticas de autorización en la API.
+
+### Frontend Developer & UX Designer
+
+**Inlaze, iGaming y marketing de afiliados** · Bogotá, Colombia · 02/2023 – 10/2023 · Contrato por proyecto
+
+- Llevé desde la idea hasta la primera versión en producción el CRM de afiliados, un producto que la compañía no tenía. Implementé el frontend en React sobre una API REST en Node.js.
+- Con ese CRM los afiliados pasaron a gestionar y cobrar las comisiones generadas por las apuestas de los clientes que referían. El cálculo corre en el backend, sobre PostgreSQL, con un proceso programado de liquidación.
+- Construí el design system del producto desde cero, publicado como librería de componentes.
+
+### Full Stack Developer Freelance
+
+**Montería, Colombia** · 01/2022 – 12/2022
+
+- 10 proyectos digitales de punta a punta para clientes de ecommerce y otros sectores, con ASP.NET Core Web API, Entity Framework Core y SQL Server en el backend y React en el frontend.
+- Autenticación con JWT, pasarela de pagos y panel de administración de catálogo y pedidos en los proyectos de ecommerce.
+
+### Desarrollador Web y Diseñador UX
+
+**Vitola SAS, retail de calzado y moda** · Colombia · 06/2019 – 12/2021
+
+- Diseñé y desarrollé desde cero el ecommerce a medida de la marca, y llevé el catálogo completo de 17 puntos de venta físicos a un solo canal digital. Modelé catálogo, inventario y pedidos en una base relacional y expuse una API REST para sincronizar existencias de las tiendas.
+- Único responsable del diseño UX/UI y del desarrollo frontend, junto a un encargado de infraestructura y servidor. El canal generó ventas desde su lanzamiento.
 
 ## 🎓 Formación
 
@@ -201,6 +302,5 @@ flowchart TB
 
 <p align="center">
   <a href="mailto:joelsalcedoojeda@gmail.com"><img alt="joelsalcedoojeda@gmail.com" src="https://img.shields.io/badge/joelsalcedoojeda%40gmail.com-ff4d8d?style=for-the-badge&logo=gmail&logoColor=white"></a>
-  <a href="https://www.linkedin.com/in/joel-salcedo-ojeda-a74044359"><img alt="LinkedIn" src="https://img.shields.io/badge/LinkedIn-0a66c2?style=for-the-badge"></a>
   <a href="https://joelsalcedoojeda.framer.website"><img alt="Portafolio" src="https://img.shields.io/badge/Portafolio-7c3aed?style=for-the-badge&logo=framer&logoColor=white"></a>
 </p>
